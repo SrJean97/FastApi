@@ -1,4 +1,4 @@
-def IsPrime_func(numero : int) :
+def IsPrime_func(numero: int) :
     if numero < 2 :
         return False
     elif numero == 2 :
