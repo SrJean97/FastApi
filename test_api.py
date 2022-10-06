@@ -15,7 +15,14 @@ def test_IsPrimeError() :
     assert response.json() == (True)
 
 #Test api fibonacci
+#Test pass
 def test_fibonacci() :
     response = client.get('/fibonacci/4')
     assert response.status_code == 200
     assert response.json() == (2)
+
+#Test Error
+def test_fibonacci1() :
+    response = client.get('/fibonacci/3')
+    assert response.status_code == 200
+    assert response.json() == (1)
