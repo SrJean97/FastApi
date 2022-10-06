@@ -3,6 +3,7 @@ from fastapi import FastAPI
 
 from IsPrime import IsPrime_func
 from fibonacci import fibbonacci_func
+from hello import hello_func
 
 app = FastAPI()
 
@@ -21,3 +22,9 @@ def fibonacci_api(pos : int) :
     except : 
         raise HTTPException(status_code=404, detail="fibonacci no encontrado")
 
+@app.get("/hello")
+def hello_api() :
+    try :
+        return hello_func()
+    except :
+        raise HTTPException(status_code=404, detail="hello no encontrado")
